@@ -1,5 +1,6 @@
 //FileName: api-routes.js
 
+
 //Initialize express router
 let router = require('express').Router();
 //Set default API response
@@ -30,5 +31,9 @@ router.route('/preguntas/:pregunta_id')
   .get(questionController.view)
   .put(questionController.update)
   .delete(questionController.delete);
+  
+router.route('/preguntas/imagen/:nombre_imagen')
+  .get(questionController.getImagen);
+
 //Export API routes
 module.exports = router;

@@ -6,6 +6,7 @@ var questionSchema = mongoose.Schema(
     pregunta:{type:String,required: true},
     descripcion:String,
     pista:String,
+    imagen:String,
     respuestas:[
       []
     ]

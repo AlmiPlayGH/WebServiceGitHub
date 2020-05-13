@@ -1,5 +1,9 @@
 //FileName: index.js
 
+const http = require("http");
+const path = require("path");
+const fs = require("fs");
+
 //Import Body parser
 let bodyParser = require('body-parser');
 
@@ -62,11 +66,49 @@ var port = process.env.PORT || 8181;
 app.get('/', (req, res) => res.send('El web service esta lanzado correctamente'));
 
 
+//BLOQUE MULTER
+const multer = require("multer");
+const handleError = (err, res) => {
+  res
+    .status(500)
+    .contentType("text/plain")
+    .end("Oops! Something went wrong!");
+};
+const upload = multer({
+  dest: "/path/to/temporary/directory/to/store/uploaded/files"
+  // you might also want to set some limits: https://github.com/expressjs/multer#limits
+});
+app.post(
+  "/uploadImagen",
+  upload.single("file" /* name attribute of <file> element in your form */),
+  (req, res) => {
+    const tempPath = req.file.path;
+    const targetPath = path.join(__dirname, "./uploads/image.png");
+
+    if (path.extname(req.file.originalname).toLowerCase() === ".jpg") {
+      fs.rename(tempPath, targetPath, err => {
+        if (err) return handleError(err, res);
+
+        res
+          .status(200)
+          .contentType("text/plain")
+          .end("File uploaded!");
+      });
+    } else {
+      fs.unlink(tempPath, err => {
+        if (err) return handleError(err, res);
+
+        res
+          .status(403)
+          .contentType("text/plain")
+          .end("Only .png files are allowed!");
+      });
+    }
+  }
+);
+
 //Use API routes in the app
 app.use('/api', apiRoutes);
-
-
-
 
 //Launch app to listen to specific port
 app.listen(port, '0.0.0.0', function()

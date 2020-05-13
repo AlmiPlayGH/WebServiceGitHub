@@ -26,13 +26,19 @@ exports.soloPregunta = function(req, res)
 exports.new = function(req, res)
 {
   var pregunta = new Pregunta();
+  pregunta._id = req.body._id;
   pregunta.pregunta = req.body.pregunta;
   pregunta.pista = req.body.pista;
   pregunta.descripcion = req.body.descripcion;
+  pregunta.imagen = req.body.imagen;
   pregunta.respuestas = req.body.respuestas;
 
   pregunta.save(function(err){
-    res.json({message:"New series saved!", data: pregunta});
+    if (err)
+    {
+      res.json({message:"error", data: err});
+    }
+    res.json({message:"New question saved!", data: pregunta});
   });
 }
 
@@ -43,7 +49,7 @@ exports.delete = function(req, res)
     {
       res.send(err);
     }
-    res.json({status:"success", message:"Serie deleted"});
+    res.json({status:"success", message:"Question deleted"});
   });
 }
 
@@ -63,7 +69,7 @@ exports.update = function(req, res)
     {
       if(err)
         res.send(err);
-      res.json({ message:"serie info updated", data: serie});
+      res.json({ message:"Question info updated", data: serie});
     });
   });
 }
@@ -77,4 +83,10 @@ exports.view = function(req, res)
     }
     res.json({data:pregunta});
   });
+}
+
+exports.getImagen = function(req,res)
+{
+  const path = require("path");
+  res.sendFile(path.join(__dirname, "./uploads/"+req.params.nombre_imagen));
 }
