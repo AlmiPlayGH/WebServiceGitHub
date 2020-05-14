@@ -83,6 +83,7 @@ app.post(
   "/uploadImagen/:nombreImagen",
   upload.single("file" /* name attribute of <file> element in your form */),
   (req, res) => {
+    //console.log(req);
     const tempPath = req.file.path;
     const targetPath = path.join(__dirname, "./uploads/"+req.params.nombreImagen);
 

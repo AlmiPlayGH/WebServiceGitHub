@@ -35,6 +35,8 @@ router.route('/preguntas/:pregunta_id')
 router.route('/preguntas/imagen/:nombre_imagen')
   .get(questionController.getImagen)
   .delete(questionController.deleteImagen);
+router.route('/getIdValido')
+  .get(questionController.getIdValido);
 
 //Export API routes
 module.exports = router;

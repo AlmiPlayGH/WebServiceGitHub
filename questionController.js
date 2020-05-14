@@ -105,3 +105,38 @@ exports.deleteImagen = function(req, res)
     }
   });
 }
+
+exports.getIdValido = function(req, res)
+{
+  Pregunta.find({$where:function()
+    {
+      var id = this._id;
+      var preguntaAnterior = Pregunta.find({_id:id-1});
+      if(id!=preguntaAnterior._id+1)
+      {
+        return true;
+      }else {
+        return false;
+      }
+    }
+
+  }, function(pregunta, error)
+    {
+      if(error)
+      {
+        res.json({message:"El triple ha dado a tablero", data:error});
+      } else {
+        if( true)
+        {
+          console.log("entra en if");
+          Pregunta.find({}).sort({_id:1}).limit(1, function(pregunta)
+        {
+          res.json({message:"pon lo que te apetezca", data:pregunta});
+        });
+      } else{
+          res.json({message:"Nadie se lo esperaba pero ha funcionado", data:pregunta});
+        }
+      }
+
+    });
+}
