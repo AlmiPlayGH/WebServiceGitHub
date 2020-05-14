@@ -31,9 +31,10 @@ router.route('/preguntas/:pregunta_id')
   .get(questionController.view)
   .put(questionController.update)
   .delete(questionController.delete);
-  
+
 router.route('/preguntas/imagen/:nombre_imagen')
-  .get(questionController.getImagen);
+  .get(questionController.getImagen)
+  .delete(questionController.deleteImagen);
 
 //Export API routes
 module.exports = router;

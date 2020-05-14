@@ -90,3 +90,18 @@ exports.getImagen = function(req,res)
   const path = require("path");
   res.sendFile(path.join(__dirname, "./uploads/"+req.params.nombre_imagen));
 }
+
+exports.deleteImagen = function(req, res)
+{
+  var fs = require('fs');
+  var ruta = "./uploads/"+req.params.nombre_imagen;
+  fs.unlink(ruta, function(err)
+  {
+    if(err)
+    {
+      res.json({message:"There was an error", data: err});
+    } else {
+      res.json({message:"image deleted"});
+    }
+  });
+}
