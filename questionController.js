@@ -106,37 +106,54 @@ exports.deleteImagen = function(req, res)
   });
 }
 
-exports.getIdValido = function(req, res)
+/*exports.getIdValido = function(req, res)
 {
-  Pregunta.find({$where:function()
+  Pregunta.find({$where:function(cont)
+  {
+    console.log(cont);
+  }});
+}*/
+
+exports.getIdValido = async function(req, res)
+{
+  var idValido=-1;
+  var noHaRetornado = true;
+  var mongoose = require('./node_modules/mongoose');
+  Pregunta.countDocuments({}, async function(error, cont)
+  {
+    if(error)
     {
-      var id = this._id;
-      var preguntaAnterior = Pregunta.find({_id:id-1});
-      if(id!=preguntaAnterior._id+1)
-      {
-        return true;
-      }else {
-        return false;
-      }
+      console.log("Error" + error);
     }
+    console.log(cont);
 
-  }, function(pregunta, error)
-    {
-      if(error)
+    for (var i = 1; i <= cont; i++) {
+      console.log("Contador i " + i);
+      if(i==cont)
       {
-        res.json({message:"El triple ha dado a tablero", data:error});
-      } else {
-        if( true)
+        console.log("idvalido " + idValido);
+        res.json({data:idValido-1});
+      }else {
+        await Pregunta.find({_id:i}, async function(error, pregunta)
         {
-          console.log("entra en if");
-          Pregunta.find({}).sort({_id:1}).limit(1, function(pregunta)
-        {
-          res.json({message:"pon lo que te apetezca", data:pregunta});
+          if(error)
+          {
+            console.log("Error" + error);
+          }
+          if(pregunta == "")
+          {
+            noHaRetornado=false;
+            console.log("Esta pregunta no existe");
+            idValido=i;
+          }
+          if(noHaRetornado && i == cont-1)
+          {
+            console.log("Entra en no retornado");
+            idValido=i+1;
+          }
         });
-      } else{
-          res.json({message:"Nadie se lo esperaba pero ha funcionado", data:pregunta});
-        }
       }
-
-    });
+      console.log("id valido " + idValido);
+    }
+  });
 }
