@@ -132,7 +132,7 @@ exports.getIdValido = async function(req, res)
       if(i==cont)
       {
         console.log("idvalido " + idValido);
-        res.json({data:idValido});
+        res.json({data:idValido-1});
       }else {
         await Pregunta.find({_id:i}, async function(error, pregunta)
         {
@@ -149,7 +149,7 @@ exports.getIdValido = async function(req, res)
           if(noHaRetornado && i == cont-1)
           {
             console.log("Entra en no retornado");
-            idValido=i+1;
+            idValido=i+2;
           }
         });
       }
