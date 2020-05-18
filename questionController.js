@@ -61,15 +61,15 @@ exports.update = function(req, res)
     {
       res.send(err);
     }
-    pregunta.pregunta = req.body.pregunta == null ? serie.pregunta : req.body.pregunta;
-    pregunta.descripcion = req.body.descripcion == null ? serie.descripcion : req.body.descripcion;
-    pregunta.pista = req.body.pista == null ? serie.pista : req.body.pista;
-    pregunta.respuestas = req.body.respuestas == null ? serie.respuestas : req.body.respuestas;
-    serie.save(function(err)
+    pregunta.pregunta = req.body.pregunta == null ? pregunta.pregunta : req.body.pregunta;
+    pregunta.descripcion = req.body.descripcion == null ? pregunta.descripcion : req.body.descripcion;
+    pregunta.pista = req.body.pista == null ? pregunta.pista : req.body.pista;
+    pregunta.respuestas = req.body.respuestas == null ? pregunta.respuestas : req.body.respuestas;
+    pregunta.save(function(err)
     {
       if(err)
         res.send(err);
-      res.json({ message:"Question info updated", data: serie});
+      res.json({ message:"Question info updated", data: pregunta});
     });
   });
 }
