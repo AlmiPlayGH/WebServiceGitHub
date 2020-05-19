@@ -23,6 +23,38 @@ exports.soloPregunta = function(req, res)
   });
 };
 
+exports.preguntasTipo = function(req, res)
+{
+  var seleccion;
+  if (req.params.id_tipo == 1) {
+    seleccion = 1;
+  }else {
+    seleccion = 2;
+  }
+  Pregunta.aggregate([
+    {$lookup:
+      {
+        from: 'asignaturas',
+        localField:'tipoPregunta',
+        foreignField:'_id',
+        as:'nombreAsignatura'
+      }
+    },
+    {$match:
+      {
+        tipoPregunta:seleccion
+      }
+    }
+  ]).exec(function(err,preguntas){
+    if (err) {
+      console.log(err);
+      res.json({data:error});
+    } else {
+      res.json({data:preguntas});
+    }
+  });
+};
+
 exports.new = function(req, res)
 {
   var pregunta = new Pregunta();
