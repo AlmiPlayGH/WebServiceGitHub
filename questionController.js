@@ -165,7 +165,7 @@ exports.getIdValido = async function(req, res)
       if(i==cont)
       {
         console.log("idvalido " + idValido);
-        res.json({data:idValido-1});
+        res.json({data:idValido});
       }else {
         await Pregunta.find({_id:i}, async function(error, pregunta)
         {
