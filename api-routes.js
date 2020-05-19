@@ -26,6 +26,7 @@ router.route('/preguntas')
 
 router.route('/soloPregunta')
   .get(questionController.soloPregunta);
+  
 router.route('/preguntasTipo/:id_tipo')
   .get(questionController.preguntasTipo);
 
@@ -37,6 +38,7 @@ router.route('/preguntas/:pregunta_id')
 router.route('/preguntas/imagen/:nombre_imagen')
   .get(questionController.getImagen)
   .delete(questionController.deleteImagen);
+
 router.route('/getIdValido')
   .get(questionController.getIdValido);
 // Asignaturas

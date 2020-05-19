@@ -62,8 +62,8 @@ exports.new = function(req, res)
   pregunta.pregunta = req.body.pregunta;
   pregunta.pista = req.body.pista;
   pregunta.descripcion = req.body.descripcion;
-  pregunta.imagen = req.body.imagen;
   pregunta.respuestas = req.body.respuestas;
+  pregunta.texto = req.body.texto;
   pregunta.tipoPregunta=req.body.tipoPregunta;
 
   pregunta.save(function(err){
@@ -98,6 +98,7 @@ exports.update = function(req, res)
     pregunta.descripcion = req.body.descripcion == null ? pregunta.descripcion : req.body.descripcion;
     pregunta.pista = req.body.pista == null ? pregunta.pista : req.body.pista;
     pregunta.respuestas = req.body.respuestas == null ? pregunta.respuestas : req.body.respuestas;
+    pregunta.texto=req.body.texto == null ? pregunta.texto : req.body.texto;
     pregunta.save(function(err)
     {
       if(err)
@@ -152,6 +153,12 @@ exports.getIdValido = async function(req, res)
   var idValido=-1;
   var noHaRetornado = true;
   var mongoose = require('./node_modules/mongoose');
+  var idMaximo=1000;
+  var variable= await Pregunta.find({},{_id:1}).sort({_id:-1}).limit(1);
+
+  console.log(variable[0]._id+1);
+  idMaximo=variable[0]._id+1;
+
   Pregunta.countDocuments({}, async function(error, cont)
   {
     if(error)
@@ -182,7 +189,7 @@ exports.getIdValido = async function(req, res)
           if(noHaRetornado && i == cont-1)
           {
             console.log("Entra en no retornado");
-            idValido=i+2;
+            idValido=idMaximo;
           }
         });
       }
