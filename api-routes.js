@@ -26,6 +26,8 @@ router.route('/preguntas')
 
 router.route('/soloPregunta')
   .get(questionController.soloPregunta);
+router.route('/preguntasTipo/:id_tipo')
+  .get(questionController.preguntasTipo);
 
 router.route('/preguntas/:pregunta_id')
   .get(questionController.view)
@@ -37,6 +39,10 @@ router.route('/preguntas/imagen/:nombre_imagen')
   .delete(questionController.deleteImagen);
 router.route('/getIdValido')
   .get(questionController.getIdValido);
+// Asignaturas
+var asignaturaController = require('./asignaturaController');
+  router.route('/asignaturas')
+  .get(asignaturaController.get);
 
 //Export API routes
 module.exports = router;
