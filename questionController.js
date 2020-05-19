@@ -64,6 +64,7 @@ exports.new = function(req, res)
   pregunta.descripcion = req.body.descripcion;
   pregunta.imagen = req.body.imagen;
   pregunta.respuestas = req.body.respuestas;
+  pregunta.tipoPregunta=req.body.tipoPregunta;
 
   pregunta.save(function(err){
     if (err)
