@@ -1,0 +1,88 @@
+body{
+  margin: 0px;
+}
+.logo{
+  position: absolute;
+  height: 187px;
+  z-index: 1;
+  left: 417px;
+  top: 28PX;
+}
+.bienvenida{
+  background: #312F73;
+  border-radius: 5px;
+  list-style-type: none;
+  text-decoration: none;
+  color: yellow;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 6px;
+  left: 239px;
+  position: absolute;
+  top: 42px;
+  box-shadow: 0px 0px 10px 10px #5caeea;
+}
+.atras{
+  -webkit-filter: blur(3px);
+   -moz-filter: blur(3px);
+   -o-filter: blur(3px);
+   -ms-filter: blur(3px);
+   filter: blur(3px);
+   z-index: -1;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+}
+#cuerpo{
+  /*background-image: linear-gradient( #203487, #80B7BC, #0E5999);*/
+  height: 100%;
+}
+.menu{
+  padding-left: 200px;
+  padding-top: 25px;
+  position: absolute;
+}
+#titulo{
+  position: absolute;
+  top: 318px;
+  left: 296px;
+  color: white;
+}
+
+#opciA{
+  position: absolute;
+  top: 434px;
+  left: 313px;
+}
+#opciB{
+  position: absolute;
+  top: 434px;
+  left: 724px;
+}
+#opciC{
+  position: absolute;
+  top: 501px;
+  left: 313px;
+}
+
+#opciD{
+  position: absolute;
+  top: 501px;
+  left: 724px;
+}
+
+.opciones{
+  color: white;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+
+}
+
+.opciones:hover {
+  text-shadow: 0 0 5px #fff;
+  transition: all 0.5s;
+}

@@ -26,7 +26,7 @@ router.route('/preguntas')
 
 router.route('/soloPregunta')
   .get(questionController.soloPregunta);
-  
+
 router.route('/preguntasTipo/:id_tipo')
   .get(questionController.preguntasTipo);
 
@@ -41,6 +41,7 @@ router.route('/preguntas/imagen/:nombre_imagen')
 
 router.route('/getIdValido')
   .get(questionController.getIdValido);
+
 // Asignaturas
 var asignaturaController = require('./asignaturaController');
   router.route('/asignaturas')

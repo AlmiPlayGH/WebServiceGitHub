@@ -1,0 +1,76 @@
+form{
+	width:483px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:#ccc;
+  /*background-image: url('https://delicadoeventos.com/wp-content/uploads/2017/05/fondo-formulario.jpg');*/
+}
+h1{
+  background-color:#ccc;
+  text-align: center;;
+}
+form label{
+	width:208px;
+	font-weight:bold;
+	display:inline-block;
+  background-color:#ccc;
+}
+
+form input[type="text"],
+form input[type="date"]{
+	width:463px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	/*resize: vertical | horizontal | none | both*/
+	resize:none;
+	display:block;
+}
+
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+}
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+#cuerpo {
+  position: relative;
+  top: -146px;
+  margin: 95px;
+  height: 500px;
+  width: 1153px;
+}
+
+.volver  {
+  color:white;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  top: -91px;
+  float: right;
+  margin-right: -277px;
+  background:teal;
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,102 @@
+h2{
+    color: white;
+    position: relative;
+    top: -99px;
+    font-size: 60px;
+    margin: 0;
+    text-align: center;
+    background-color: #312F73;
+    width: 1073px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.guanteAbierto {
+  height: 100px;
+  float: right;
+  top: -90px;
+  position: relative;
+  right: 129px;
+  }
+
+  .guanteAbierto:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transition: all 0.4s;
+    box-shadow: 0 0 20px rgb(241, 238, 61);
+    border-radius: 44px;
+    background-color: #ffef0075;
+  }
+
+  #cuerpo{
+    position: absolute;
+    padding-left: 110px;
+    top: 595px;
+    height: 1100px;
+  }
+  table{
+    color: white;
+    top: 17px;
+    position: relative;
+    width: 1073px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+  }
+  .barra th{
+    background-color: #312F73;
+
+  }
+  .par td, .par th{
+    text-align: center;
+    background-color: #232348;
+  }
+
+
+  th, td{
+    padding: 25px;
+    text-align: center;
+  }
+
+  #columnchart_values{
+    position: relative;
+    top: 20px;
+  }
+
+  #piechart{
+    position: relative;
+    top: 40px;
+  }
+
+  #promedios{
+    position: relative;
+    width: 100%;
+    top: -90px;
+    text-align: center;
+  }
+h3{
+  color: white;
+  text-align: center;
+  width: 148px;
+  padding-bottom: 0px;
+ padding-top: 20px;
+}
+
+td #total {
+  text-align: center;
+}
+
+.volver  {
+  position: absolute;
+  top: 10px;
+  float: left;
+  list-style-type: none;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  background-color: #312F73;
+  opacity: 0.9;
+  border-radius: 5px;
+}

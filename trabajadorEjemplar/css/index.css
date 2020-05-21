@@ -1,0 +1,54 @@
+*
+{
+  margin: 0px;
+}
+/*body{
+  background: linear-gradient(to right, #713D99 , #7C14CC, #CC8714);
+}*/
+body .background{
+
+}
+
+#formulario{
+height: 215px;
+width: 400px;
+color: white;
+padding: 20px;
+background-color: #01032C;
+text-align: center;
+border-radius: 20px;
+margin-left: 414px;
+margin-top: 211px;
+box-shadow: 0px 0px 10px 10px #5caeea;
+
+}
+
+input{
+margin-top: 16px;
+background-color: white;
+text-align: center;
+width: 300px;
+font-size: 20px;
+}
+
+#login{
+background-color: black;
+border-radius: 10px;
+height: 40px;
+color: white;
+}
+#login:hover{
+  background-color: #215A24;
+}
+h1{
+font-family: 'Roboto', sans-serif;
+}
+
+.enlaceMenu {
+  color: white;
+  display: inline-table;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  top: 12px;
+}
