@@ -9,13 +9,13 @@
   </head>
   <body>
     <div id="encabezado">
-      <img src="imagenes/logo.png" alt="Foto Logo" class="logo">
+     
       <img src="imagenes/encabezado.jpg" alt="Foto Logo" class="plato">
       <?php
       session_start();
       if(isset($_SESSION['user']))
       {
-        echo "<a class='usuario' href='estadisticas.php'>".$_SESSION['user']." </a>";
+        echo "<a class='usuario' href='modificarUsuarios.php'>".$_SESSION['user']." </a>";
        
       }
        

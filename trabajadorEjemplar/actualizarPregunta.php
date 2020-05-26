@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="encabezado">
-      <img src="imagenes/logo.png" alt="Foto Logo" class="logo">
+     
       <img src="imagenes/encabezado.jpg" alt="Foto Logo" class="plato">
       <?php
       session_start();

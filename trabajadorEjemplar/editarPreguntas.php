@@ -10,13 +10,12 @@
   </head>
   <body>
     <div id="encabezado">
-      <img src="imagenes/logo.png" alt="Foto Logo" class="logo">
       <img src="imagenes/encabezado.jpg" alt="Foto Logo" class="plato">
       <?php
       session_start();
       if(isset($_SESSION['user']))
       {
-        echo "<a class='usuario' href='estadisticas.php'>".$_SESSION['user']." </a>";
+        echo "<a class='usuario' href='modificarUsuarios.php'>".$_SESSION['user']." </a>";
        
       }
        
@@ -58,7 +57,8 @@
               <label for="filtro">Introducir búsqueda:</label>
               <input type="text" id="fil" name="filtro"/><br><br>
           </div>
-          <a class='boton' href='añadirPregunta.php'>Añadir pregunta</a>
+          <a class='boton' href='añadirPregunta.php'>Añadir pregunta</a><br><br>
+          <a class='boton' href='masCosas.php'>Detalles avanzados</a>
           
           <!--BOTON DIALOG QUE NO VA
           <a><button class="button-default link">Go to Google</button></a>-->
@@ -77,6 +77,7 @@
         
         </table>
         <span class="ir-arriba icon-arrow-up2 material-icons">expand_less</span>
+        
       </div>
 
      </div>

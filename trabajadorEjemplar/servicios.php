@@ -52,11 +52,42 @@
     echo $puntuacionJson;
   }
 
-  //PAISES
+  //cosas susuario
+  if($funcion == 'datosUsuario')
+  {
+    $datos = getUsuarioDatos($_SESSION['user']);
+    $datosJson = json_encode($datos, JSON_UNESCAPED_UNICODE);
+    echo $datosJson;
+  }
+
+   //PUNTUACION TOTALES
+   if($funcion == 'puntuacionTotal')
+   {
+     $puntuacion = getPuntuacionTotal($_SESSION['user']);
+     $puntuacionJson = json_encode($puntuacion, JSON_UNESCAPED_UNICODE);
+     echo $puntuacionJson;
+   }
+
+  //PAISES FUNCION
   if($funcion == 'paises')
   {
     $paises = getPais();
-    $paisesJson = json_encode($paises, JSON_UNESCAPED_UNICODE);
     echo $paises;
+  }
+
+  //PAISES PARA EL ALTA
+  if($funcion == 'paisesCombo')
+  {
+    $paises = getPaisCombo();
+    $paisesJson = json_encode($paises, JSON_UNESCAPED_UNICODE);
+    echo $paisesJson;
+  }
+
+  //EDADES
+  if($funcion == 'edades')
+  {
+    $edades = getEdades();
+    $edadesJson = json_encode($edades, true);
+    echo $edades;
   }
  ?>

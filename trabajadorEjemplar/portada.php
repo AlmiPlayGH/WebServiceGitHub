@@ -11,9 +11,9 @@
 
   <div id="cuerpo">
   <img src="imagenes/plato.jpg" alt="Foto Logo" class="atras">
-    <img src="imagenes/logo.png" alt="Foto Logo" class="logo">
+   
     <img src="imagenes/portada.png" width="900" height="550" class="menu">
-    <h1 id="titulo">¿Qué desea hacer?</h1>
+    
     <a class= "opciones" id="opciA" href="top10.php">Top10</a>
     
    <?php
@@ -21,7 +21,7 @@
     session_start();
     if(isset($_SESSION['user']))
     {
-     echo "<a class='bienvenida'>Hola ".$_SESSION['user']."!!</a>";
+     echo "<a class='bienvenida' href='modificarUsuarios.php'>Hola ".$_SESSION['user']."!!</a>";
      
     }
     if($_SESSION['id_rol']==1)

@@ -1,33 +1,32 @@
 
 h2{
-    color: white;
-    position: relative;
-    top: -99px;
-    font-size: 60px;
-    margin: 0;
-    text-align: center;
-    background-color: #312F73;
-    width: 1073px;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
+  color: white;
+  position: relative;
+  top: -7vw;
+  font-size: 4vw;
+  margin: 0;
+  text-align: center;
+  background-color: #312F73;
+  width: 77vw;
+  padding: 1vw;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
   }
 
   #cuerpo{
     position: absolute;
-    padding-left: 110px;
-    top: 595px;
+    padding-left: 9vw;
+    top: 43vw;
     height: 1100px;
   }
   table{
     color: white;
     top: 17px;
     position: relative;
-    width: 846px !important; 
     text-align: center;
     font-family: 'Roboto', sans-serif;
     border-radius: 20px;
-    font-size: 9px;
+    font-size: 0.7vw;
   }
   .barra th{
     background-color: #312F73;
@@ -43,6 +42,11 @@ h2{
     padding: 25px;
     text-align: center;
   }
+  /*  table td:hover{
+    font-size: 12px;
+  transition: all 0.8s;
+  box-shadow: 0px 0px 10px 10px #5caeea;
+  }*/
 
 h3{
   color: white;
@@ -63,27 +67,28 @@ h4{
 }
 #groupChecks{
    
-    width: 213px;
-    height: 500px;
-    color: white;
+  width: 16vw;
+  height: 36vw;
+  color: white;
+  font-size: 1.2vw;
 }
 
 #preguntas{
-    position: relative;
-    float: left;
-    top: -501px;
-    margin-left: 248px;
-    width: 844px;
+  position: relative;
+  top: -37vw;
+  margin-left: 18vw;
+  width: 67%;
 }
 input{
     background-color: white;
 }
 #elementosFiltro input{
-    width: 209px;
+    width: 80%;
 }
 
 button{
     background-color: white;
+    font-size: 1.2vw;
 }
 
 .boton{
@@ -96,6 +101,7 @@ button{
   background-color: #312F73;
   opacity: 0.9;
   border-radius: 5px;
+  font-size: 1.2vw;
 }
 
 .dialog-ovelay {
@@ -192,12 +198,9 @@ cursor: pointer
 .ID{
   cursor: pointer;
 }
-.ID td:hover{
-  -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    transition: all 0.4s;
-    box-shadow: 0 0 20px rgb(241, 238, 61);
-    border-radius: 44px;
+.ID:hover{
+  font-size: 15px;
+  transition: all 0.8s; 
 }
 
 .tooltip {
@@ -238,6 +241,9 @@ cursor: pointer
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+  font-size: 12px;
+  transition: all 0.8s;
+  box-shadow: 0px 0px 10px 10px #5caeea;
 }
 
 span .tooltiptext{

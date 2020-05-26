@@ -1,85 +1,45 @@
-var arrayUsuarios = null;
-
-function comprobarUsuario(arrayUsu){
-  var sizeArray = arrayUsu.length;
-  var usuario = $("#user").val();
-
-  for(var i = 0; i < sizeArray; i++)
-  {
-    if (usuario==arrayUsu[i].user)
-    {
-      alert("El usuario ya exite.");
-      usuario.innerHTML= "";
-      break;
+function comprobarContraseña(contraseña){
+    var escrita =  $('#pass').val();
+    
+    if (escrita == contraseña){
+        console.log("bien");
+        $("#pass").css('background-color', 'white');
+    } else {
+        alert("Contraseña incorrecta");
+        $("#pass").css('background-color', 'red');
     }
-  }
-}
-
-function llenarCombo(array){
-  var htmlCombo = "";
-  var sizeArray = array.length;
-  htmlCombo = "<option value=0>-- Seleccione una pais --</option>";
-  for(var i = 0; i < sizeArray; i++)
-    {
-      htmlCombo +=" <option value="+array[i].idPais+">"+array[i].nombre+"</option>"
-    }
-    $("#asig").html(htmlCombo);
 }
 
 $(document).ready(function()
 {
+    $('#pass').on('change', function()
+    {
+      var parametros = {funcion: "datosUsuario"};
+  
+      $.ajax(
+        {
+          data:parametros,
+          url: 'http://127.0.0.1/trabajadorEjemplar/servicios.php',
+          type:'post',
+          success:function(response)
+          {
+           
+            arrayUsuarios = $.parseJSON(response);
+            comprobarContraseña(arrayUsuarios.pass);
+            console.log(arrayUsuarios);
+          },
+          error: function(error)
+          {
+            alert("Se ha producido un error");
+           console.log(error)
+          }
+        }
+      );
+    });
+
   var formularioValido = true;
   var mensajeError = "";
-  var numAPulsadas = 0;
-
-  var parametros = {funcion: "paisesCombo"};
-
-  $.ajax(
-    {
-      data:parametros,
-      url: 'http://127.0.0.1/trabajadorEjemplar/servicios.php',
-      type:'post',
-      success:function(response)
-      {
-       //console.log(response);
-       arrayPais = $.parseJSON(response);
-      // console.log(arrayPais[1].idPais);
-       llenarCombo(arrayPais);
-
-      },
-      error: function(error)
-      {
-        alert("Se ha producido un error");
-       console.log(error)
-      }
-    }
-  );
-
-  $('#user').on('change', function()
-  {
-    var parametros = {funcion: "usuarios"};
-
-    $.ajax(
-      {
-        data:parametros,
-        url: 'http://127.0.0.1/trabajadorEjemplar/servicios.php',
-        type:'post',
-        success:function(response)
-        {
-         //console.log(response);
-          arrayUsuarios = $.parseJSON(response);
-          comprobarUsuario(arrayUsuarios)
-
-        },
-        error: function(error)
-        {
-          alert("Se ha producido un error");
-         console.log(error)
-        }
-      }
-    );
-  });
-
+  
   $('#repassword').on('change textinput input', function()
   {
     mensajeError = "";
@@ -123,12 +83,11 @@ $(document).ready(function()
         formularioValido = false;
         mensajeError += "El email no es válido\n";
         $("#email").css('background-color', 'red');
-        
       } else
       {
+       
           var backgroundColor = $("#user").css("background-color");
           $("#email").css('background-color', backgroundColor);
-         
       }
 
 

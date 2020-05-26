@@ -75,16 +75,16 @@ h2{
   #promedios{
     position: relative;
     width: 100%;
-    top: -90px;
+    top: -4vw;
     text-align: center;
   }
 h3{
   color: white;
   text-align: center;
   width: 2vw;
-  padding-bottom: 0px;
- padding-top: 20px;
  font-size: 2vw;
+ top: -2vw;
+ position: relative;
 }
 
 td #total {

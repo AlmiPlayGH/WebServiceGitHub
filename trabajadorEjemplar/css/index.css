@@ -5,20 +5,23 @@
 /*body{
   background: linear-gradient(to right, #713D99 , #7C14CC, #CC8714);
 }*/
-body .background{
-
+body{
+background-image: url("../imagenes/plato.jpg");
+background-size: cover;
+background-position: center center;
+height: 100%;
 }
 
 #formulario{
-height: 215px;
-width: 400px;
+height: 35vh;
+width: 25vw;
 color: white;
-padding: 20px;
+padding: 2vw;
 background-color: #01032C;
 text-align: center;
 border-radius: 20px;
-margin-left: 414px;
-margin-top: 211px;
+margin-left: 35vw;
+margin-top: 19vh;
 box-shadow: 0px 0px 10px 10px #5caeea;
 
 }
@@ -27,21 +30,23 @@ input{
 margin-top: 16px;
 background-color: white;
 text-align: center;
-width: 300px;
-font-size: 20px;
+width: 22vw;
+font-size: 1.5vw;
 }
 
 #login{
 background-color: black;
 border-radius: 10px;
-height: 40px;
+height: 7vh;
 color: white;
+font-size: 4vh;
 }
 #login:hover{
   background-color: #215A24;
 }
 h1{
 font-family: 'Roboto', sans-serif;
+font-size: 2vw;
 }
 
 .enlaceMenu {

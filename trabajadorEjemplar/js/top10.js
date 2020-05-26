@@ -81,7 +81,7 @@ function aparecer(va){
       $(this).children("td").each(function(contadorColumnas)
       {
       
-        $(this).fadeOut("slow");
+        $(this).fadeOut("2900");
       });
     });
   } else {

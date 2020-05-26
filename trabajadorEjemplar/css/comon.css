@@ -8,30 +8,28 @@
   background-color: #01032C;
   color: yellow;
   position: absolute;
-  padding: 11px;
-      padding-right: 11px;
-      padding-left: 11px;
+  padding: 0.7vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   border-radius: 12px;
-  padding-left: 24px;
-  padding-right: 24px;
   list-style: none;
   text-decoration: none;
   float: right;
   overflow: hidden;
-  top: 324px;
-  margin-left: 17px;
+  top: 20vw;
+  cursor: pointer;
   font-weight: bold;
   box-shadow: 0px 0px 10px 10px #5caeea;
-  left: 96px;
+  left: 8vw;
 }
 
 
 .logo
 {
-  height: 289px;
-  width: 283px;
+  
+  width: 23vw;
   position: absolute;
-  left: 508px;
+  left: 36vw;
   z-index: 1;
   background-color: transparent;
 }
@@ -40,23 +38,23 @@
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 377px;
-  
+  top: -12vh;
+  height: 33vw;
 }
 #encabezado{
   /*margin-top: 38px;*/
 }
 #menu
 {
-  padding:5px;
+  padding:0.5vw;
   /*overflow: hidden;*/
   position: absolute;
-  top:377px;
+  top:27vw;
   transition: all 0.5s;
-  border-top: solid 8px #0321BA;
-  border-bottom: solid 8px #0321BA;
-  height: 57px;
-  width: 100%;
+  border-top: solid 1vh #0321BA;
+  border-bottom: solid 1vh #0321BA;
+  height: 5vw;
+  width: 100vw;
 }
 
 
@@ -69,17 +67,18 @@
 #menu > ul > li
 {
   float:right;
-  font-size: 30px;
-  padding-left: 123px;
-  margin: 5px;
+  font-size: 2vw;
+  padding-left: 10vw;
+  margin: 1vw;
 }
 
 #menu > ul > li > a
 {
   display: inline-block;
-  padding: 5px;
-  text-decoration: none;
-  margin-left: 21px;
+  padding: 0.3vw;
+text-decoration: none;
+margin-left: 1vw;
+font-size: 1.8vw;
 }
 
 #menu > ul > li a:hover
@@ -88,9 +87,6 @@
   -moz-transform: scale(1.1);
   transition: all 0.4s;
 }
-
-
-
 
 
 #ini > a
@@ -115,5 +111,6 @@
 #ini >.usuario{
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
 }
 

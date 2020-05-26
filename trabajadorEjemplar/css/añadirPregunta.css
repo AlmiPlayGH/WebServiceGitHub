@@ -1,27 +1,27 @@
 h2{
   color: white;
   position: relative;
-  top: -99px;
-  font-size: 60px;
+  top: -7vw;
+  font-size: 4vw;
   margin: 0;
   text-align: center;
   background-color: #312F73;
-  width: 1073px;
-  padding: 10px;
+  width: 77vw;
+  padding: 1vw;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
-}
+  }
 
 #cuerpo{
   position: absolute;
-  padding-left: 110px;
+  padding-left: 8vw;
   top: 595px;
   height: 1100px;
 }
 
 form{
-	width:483px;
-	padding:16px;
+	width:40vw;
+	padding:2vw;
 	border-radius:10px;
 	margin:auto;
 	background-color:#ccc;
@@ -30,60 +30,66 @@ form{
 h1{
   background-color:#ccc;
   text-align: center;;
+  font-size: 3vw;
 }
 form label{
-	width:208px;
+	width:20vw;
 	font-weight:bold;
 	display:inline-block;
   background-color:#ccc;
+	font-size: 1.25vw;
 }
 
 form input[type="text"],
+form input[type="password"],
 form input[type="date"]{
-	width:463px;
-	padding:3px 10px;
+	width:35vw;
+	padding:0.25vw 1vw;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
 	background-color:#f6f6f6;
 	margin:8px 0;
 	display:inline-block;
+	font-size: 1.5vw;
 }
 
 .check{
 	position: relative;
-	left: -178px;
+	left: -16vw;
+	height: 1vw;
 }
-#cargar{
-	width:100%;
+
+
+
+form input[type="submit"]{
+  width:100%;
 	padding:8px 16px;
 	border:1px solid #000;
 	border-radius:5px;
 	display:block;
 	color:#fff;
 	background-color:#000;
-	top: 27px;
+	top: 8px;
     position: relative;
-}
 
-
-form input[type="submit"]:hover{
-	cursor:pointer;
 }
 
 
 .volver  {
   position: relative;
-  top: -91px;
+  top: -7vh;
   float: right;
-  margin-right: -277px;
+  margin-right: -19vw;
   list-style-type: none;
   text-decoration: none;
   display: inline-block;
   color: white;
-  padding: 10px;
+  padding: 1vw;
   background-color: #312F73;
   opacity: 0.9;
   border-radius: 5px;
+  margin-top: 1vh;
+  font-size: 1.5vw;
 }
 
 .showcss{ display:block;}
@@ -91,8 +97,21 @@ form input[type="submit"]:hover{
 
 #file{
   background-color: #ccc;
+  width: 27vw;
+  font-size: 1vw;
 }
 #asig{
   background-color: white;
-  width: 100%;
+  width: 93%;
+  font-size: 1.5vw;
 }
+#cargar
+{
+  width: 93%;
+  background-color:black;
+  margin-top: 1vw;
+  padding: 0.5vw;
+  color:white;
+  font-size: 1.25vw;
+}
+

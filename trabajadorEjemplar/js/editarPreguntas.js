@@ -17,7 +17,7 @@ function webServiceResult(da)
         if(i%2==0){
             htmlPreguntas +=   
                     "<tr class='impar'>"+
-                    "<td class='ID tooltip' onclick='confirmacion("+da.data[i]._id+")'>"+da.data[i]._id+
+                    "<td id = 'id' class='ID tooltip' onclick='confirmacion("+da.data[i]._id+")'>"+da.data[i]._id+
                     '<span class="tooltiptext">Editar o borrar preguntas</span>'+
                     "</td>"+
                     "<td class='Pregunta'>"+da.data[i].pregunta+"</td>"+

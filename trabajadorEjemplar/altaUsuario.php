@@ -7,14 +7,16 @@
   $email = $_POST["email"];
   $fechaNaci = $_POST["fecha_nacimiento"];
   $password = $_POST["pass"];
-
+  $idPais = $_POST["idPas"];
+  
   include_once "datos.php";
-  $resultado = insertarUsuario($user, $name, $apellido1, $apellido2, $email, $fechaNaci,$password);
-    var_dump($resultado);
+  $resultado = insertarUsuario($user, $name, $apellido1, $apellido2, $email, $fechaNaci, $password, $idPais);
+    
  if($resultado)
   {
-    header("location: index.php");
+   header("location: index.php");
   } else {
+   // alert("Usuario NO insertado");
    header("location: registro.php");
   }
  ?>

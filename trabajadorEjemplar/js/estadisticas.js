@@ -112,6 +112,28 @@ $(document).ready(function()
         }
       }
     );
+
+    var param = {user: usuario, funcion: "puntuacionTotal"};
+   
+    $.ajax(
+      {
+        data:param,
+        url: 'http://127.0.0.1/trabajadorEjemplar/servicios.php',
+        type:'post',
+        success:function(response)
+        {
+          //console.log(response);
+          total = $.parseJSON(response);
+          ponerTotales(total);
+          
+        },
+        error: function(error)
+        {
+          alert("Se ha producido un error");
+          console.log(error);
+        }
+      }
+    );
    
     
     google.charts.load('current', {'packages':['corechart']});
